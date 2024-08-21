@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 4
+      POSTGRES_DB: db_trans
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  account-manager:
+    build:
+      context: .
+    environment:
+      DATABASE_URL: "postgresql://postgres:4@db:5432/db_trans?schema=public"
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+
+volumes:
+  postgres-data:

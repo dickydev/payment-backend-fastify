@@ -1,0 +1,37 @@
+{
+  "name": "account-manager-service",
+  "version": "1.0.0",
+  "description": "Account Manager Service with Fastify, Prisma, TypeScript, and Docker",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "build": "tsc",
+    "migrate": "npx prisma migrate deploy",
+    "generate": "npx prisma generate",
+    "lint": "eslint 'src/**/*.ts'",
+    "prebuild": "npm run generate",
+    "docker:build": "docker build -t account-manager-service .",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/swagger": "^8.15.0",
+    "@prisma/client": "^5.18.0",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "fastify-oas": "^3.0.8",
+    "fastify-swagger": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^22.4.1",
+    "nodemon": "^3.1.4",
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
