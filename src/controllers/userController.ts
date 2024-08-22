@@ -1,5 +1,3 @@
-// src/controllers/userController.ts
-
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { UserService } from '../services/userService';
 
@@ -28,6 +26,7 @@ export class UserController {
         reply.send(user);
       }
     } catch (error) {
+      console.error('Error fetching user:', error); // Tambahkan logging di sini
       reply.code(500).send({ error: 'Internal Server Error' });
     }
   }

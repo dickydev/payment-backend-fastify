@@ -1,5 +1,3 @@
-// src/controllers/transactionController.ts
-
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { TransactionService } from '../services/transactionService';
 

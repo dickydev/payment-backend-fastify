@@ -1,5 +1,3 @@
-// src/controllers/accountController.ts
-
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { AccountService } from '../services/accountService';
 

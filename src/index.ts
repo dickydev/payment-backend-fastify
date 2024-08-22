@@ -1,5 +1,3 @@
-// src/app.ts (atau file utama Anda)
-
 import Fastify from 'fastify';
 import OAS from 'fastify-oas';
 import { PrismaClient } from '@prisma/client';
